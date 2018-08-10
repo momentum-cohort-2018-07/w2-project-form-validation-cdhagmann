@@ -151,14 +151,12 @@ function validateParkingDate() {
 function validateCardDate(date) {
     var year = parseInt("20" + date.split("/")[1]);
     var month = parseInt(date.split("/")[0]);
-    console.log(month, year)
     if (isNaN(year) || isNaN(month)) {
         return false;
     }
 
     var cardDate = new Date(year, month - 1);
     var currentDate = new Date();
-    console.log(cardDate, currentDate)
     if (cardDate.getFullYear() < currentDate.getFullYear()) {
         return false;
     } else if (cardDate.getFullYear() > currentDate.getFullYear()) {
@@ -167,7 +165,7 @@ function validateCardDate(date) {
         return true;
     } else {
         return false;
-    };
+    }
 }
 
 function validateCardNumber(number) {
@@ -225,7 +223,7 @@ document
     .addEventListener("change", function (event) {
         if (validateParkingDate()) {
             parkingPrice();
-        };
+        }
     });
 
 document
@@ -233,5 +231,5 @@ document
     .addEventListener("change", function (event) {
         if (validateParkingDate()) {
             parkingPrice();
-        };
+        }
     });

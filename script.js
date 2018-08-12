@@ -109,7 +109,7 @@ function validateCarYear(date) {
 }
 
 function validateCVV(number) {
-    var reg = /\d{3}/;
+    var reg = /^\d{3}$/;
     return reg.test(number);
 }
 

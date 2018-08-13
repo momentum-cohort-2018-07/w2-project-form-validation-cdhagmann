@@ -99,13 +99,16 @@ function getInputName(input) {
 
 
 function validateCarYear(date) {
+    debugger
     var year = parseInt(date);
+    var currentDate = new Date();
 
     if (isNaN(year)) {
         return false;
     }
-
-    return year > 1900;
+    
+    var futureYear = currentDate.getFullYear() + 1;
+    return 1900 < year && year <= futureYear;
 }
 
 function validateCVV(number) {
